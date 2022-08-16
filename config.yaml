@@ -1,0 +1,12 @@
+"rabbit_dsn": "amqp://test:test@localhost/test"
+"queue": "test"
+"database_dsn": "postgresql://test:test@localhost/test?sslmode=disable"
+#"database_dsn": "test:test@tcp(127.0.0.1:3306)/test"
+"table_name": "messages"
+"consumer_name": "go-consumer"
+"log_format": "text"
+"db_max_open_conns": 25
+"db_max_idle_conns": 25
+"db_conn_max_lifetime": 5
+"rabbit_reconnect_interval": 5
+"rabbit_goroutines_cnt": 10

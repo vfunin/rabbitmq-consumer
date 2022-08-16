@@ -1,0 +1,88 @@
+linters:
+  disable-all: true
+  enable:
+    - deadcode
+    - depguard
+    - dogsled
+    - dupl
+    - errcheck
+    - exhaustive
+    - gochecknoinits
+    - goconst
+    - gocyclo
+    - gofmt
+    - goimports
+    - gomnd
+    - revive
+    - exportloopref
+    - goprintffuncname
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - misspell
+    - nakedret
+    - nolintlint
+    - exportloopref
+    - staticcheck
+    - stylecheck
+    - typecheck
+    - unconvert
+    - unused
+    - varcheck
+    - whitespace
+    - nlreturn
+    - prealloc
+    - wsl
+    - nestif
+
+linters-settings:
+  govet:
+    check-shadowing: true
+    enable:
+      - fieldalignment
+
+  gocritic:
+    # Which checks should be enabled; can't be combined with 'disabled-checks';
+    # See https://go-critic.github.io/overview#checks-overview
+    # To check which checks are enabled run `GL_DEBUG=gocritic golangci-lint run`
+    # By default list of stable checks is used.
+    enabled-checks:
+      - commentFormatting
+      - appendCombine
+      - argOrder
+      - builtinShadow
+      - commentedOutImport
+      - elseif
+      - equalFold
+      - ifElseChain
+      - mapKey
+      - sloppyReassign
+      - unslice
+      - weakCond
+      - wrapperFunc
+      - yodaStyleExpr
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - dupl
+        - gosec
+        - funlen
+        - lll
+        - gochecknoinits
+        - exhaustivestruct
+    - linters:
+        - stylecheck
+      text: "ST1003:"
+    - linters:
+        - golint
+      text: "don't use an underscore in package name"
+    - linters:
+        - govet
+      path: '.go'
+      text: "fieldalignment: struct with"
+    - linters:
+        - govet
+      path: '.go'
+      text: "fieldalignment: struct of size"
