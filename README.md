@@ -1,4 +1,4 @@
-# RabbitMQ Consumer
+# Go RabbitMQ Consumer
 
 ---
 
